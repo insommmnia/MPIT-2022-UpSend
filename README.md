@@ -4,7 +4,7 @@
 Проект сделан на хакатоне МПИТ 2022
 Тема проекта: Краудфандинг
 Сервис направленен на жителей России( В будущем всего мира)
-![logo](https://github.com/insommmnia/MPIT-2022/blob/main/img/logo.png?raw=true)
+![logo](https://github.com/insommmnia/MPIT-2022-UpSent/blob/main/imgs/1_1.png?raw=true)
 #### Проблемы
 -Высокий риск понести убытки входе инвестиций  проекты
 -Недостаточная финансированность достойных стартапов
@@ -20,15 +20,16 @@
 Веб-сервис, в котором мы будем сопровождать проекты до их дня релиза, а не отпускать разработчиков в вольное плавание, стартаперы будут вынуждены публиковать весь рабочий процесс, докладывать куда и на что уходят деньги
 
 
-![site](https://github.com/insommmnia/MPIT-2022/blob/90ee5ed3ab90a88ea3d5f690cb882455a4540585/img/main.png?raw=true)
+![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/90ee5ed3ab90a88ea3d5f690cb882455a4540585/imgs/3_3.png?raw=true)
 
-![site](https://github.com/insommmnia/MPIT-2022/blob/258fcb82c9e89974f0d71a3d585bb8481e13c86c/img/sug.png?raw=true)
+![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/258fcb82c9e89974f0d71a3d585bb8481e13c86c/imgs/3_3.png?raw=true)
 
 
 #### Реализация
 Возможность отслеживания проделанной работы и отчета затраченных средств
 Распространение продуктов наших пользователей с целью максимальной заинтересованности потребителя
 
+![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/258fcb82c9e89974f0d71a3d585bb8481e13c86c/imgs/4_4.png?raw=true)
 ####Скрытые преимущества
   Возможность выбора между видами краундфандинга:
 “Все или ничего”
