@@ -50,15 +50,15 @@
 			<a class="logo">
 				<img src="img/logo.png"  style="max-width: 65px; transform: rotate(90deg); " alt="Inso logo">
 			</a>
-			<div style=" height: 70px; padding-left: 100px; padding-right: 100px;">
+			<div style="" class="link-head-box">
 			    <div style="margin-top:25px;font-weight: 400">
-			        <a href="#" class="link-head" style="margin-left: 30px">Искусство</a>
-				    <a href="#" class="link-head" style="margin-left: 30px">Финансы</a>
-					<a href="#" class="link-head" style="margin-left: 30px">Одежда</a>
-					<a href="#" class="link-head" style="margin-left: 30px">Технологии</a>
-					<a href="#" class="link-head" style="margin-left: 30px">Музыка</a>
-					<a href="#" class="link-head" style="margin-left: 30px">Игры</a>
-					<a href="#" class="link-head" style="margin-left: 30px">Прочее</a>
+			        <a href="posts.php" class="link-head" style="margin-left: 30px">Искусство</a>
+				    <a href="posts.php" class="link-head" style="margin-left: 30px">Финансы</a>
+					<a href="posts.php" class="link-head" style="margin-left: 30px">Одежда</a>
+					<a href="posts.php" class="link-head" style="margin-left: 30px">Технологии</a>
+					<a href="posts.php" class="link-head" style="margin-left: 30px">Музыка</a>
+					<a href="posts.php" class="link-head" style="margin-left: 30px">Игры</a>
+					<a href="posts.php" class="link-head" style="margin-left: 30px">Прочее</a>
 					</div>
 			</div>
 			
@@ -83,7 +83,7 @@
                 ?>  
 				
 				<div style="background-color: red; max-width: 700px; heigth: 70px" ></div> 
-				<a href="#" class="link-head">Профиль</a>
+				<a href="profile.php" class="link-head">Профиль</a>
 				
 				<a href="php/exit.php"><button class="header-btn header-btn-ex">Выйти</button></a>
 				<?php
@@ -91,7 +91,7 @@
                        
                 ?>
                 	
-				<a href="#" class="link-head">Профиль</a>
+				<a href="profile.php" class="link-head">Профиль</a>
 				<a href="php/exit.php"><button class="header-btn header-btn-ex">Выйти</button></a>
 				<?php }; ?>
 				</div>
@@ -139,7 +139,7 @@
                         <div style="height: 30px; width: 30px;"></div>
 						<p class="service-place">
 						    Описание:
-							<?php echo $result2["descr"]; ?>
+							<?php echo $result2["description"]; ?>
 						</p>
 						<p class="service-descr" >
 						    Автор:
@@ -147,21 +147,49 @@
 						</p>
 						<p class="service-descr" >
 						    Собрано:
-						    <div class="w3-light-grey" style="border-radius: 30px">
-				                <?php
-				                $per = $result2["collected"]/($result2["target"]/100)
-				                
-				                ?>
-				                
-				                
-                                <div id="myBar" class="w3-container w3" style="height:24px;width:<?php echo $per; ?>%; background-color: #FF4040; border-radius: 30px"></div>
-                            </div>
-                        <p class="service-descr" >
-						    
-							<?php echo $result2["collected"]; ?>
-							 Из
-							<?php echo $result2["target"]; ?>
-						</p>
+						    <div class="" style="border-radius: 30px">
+                       
+                      <?php
+                         $per = $result2["collected"]/($result2["target"]/100);
+                         
+                      ?>
+                              <div id="myBar" class="w3-container w3" style="height:13px;width:<?php echo $per; ?>%; background-color: 
+                              <?php
+                              
+                              if ($per == 0){
+                                  
+                               ?> 
+                                
+                               <?php
+                              } else {
+                              ?>
+                              #FF4040
+                              
+                              
+                              
+                              <?php
+                              
+                              };
+                              
+                              ?>
+                              ; border-radius: 30px" ></div>
+                              
+                                  
+
+                             
+                          </div>
+                      <p class="service-descr" style="font-size: 15px">
+                         <?php  echo $result2["collected"];?> из <?php  echo $result2["target"];?>
+         
+                        </p>
+                          
+                        
+         
+          <p class="service-descr" >
+            Теги: #музыка #игры
+         
+        </p>
+         
 						 
 							
 							
@@ -170,8 +198,8 @@
 							
 	 	                 
 				           
-				            <form method="POST">
-				                <input type="hidden" value="<?php echo $result2["id"]  ?>" name='id'>
+				            <form method="GET" action="profile_user.php">
+				                
 							    <a type="submit" class="link service-link">
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							viewBox="0 0 494.148 494.148" style="enable-background:new 0 0 494.148 494.148;" xml:space="preserve">
@@ -183,6 +211,7 @@
 									</g>
 								</g>
 							</svg>
+							<input type="hidden" value="<?php echo $result2["userid"]  ?>" name='userid'>
 							<button style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"><span type="submit">Пожертвовать</span></button>
 					</a>
 							
