@@ -1,3 +1,10 @@
+<?php session_start(); ?>
+ <?php
+        if  ($_SESSION['id'] != "") {
+         echo "the page is unavailable";
+        }else {
+   
+?>
 <html lang="en">
 <head>
     <link rel="icon" type="image/x-icon" href="img/fav_ico.ico">
@@ -11,14 +18,14 @@
 </head>
 <body>
     <canvas id="canvas" style="position: absolute;" ></canvas>
-    <header class="header">
+    <header class="header" style="background: white;">
 		<div class="container header-container">
 			<a class="logo">
 				<img src="img/logo.png"  style="max-width: 65px; margin-top: 0px; transform: rotate(90deg);" alt="Inso logo">
 			</a>
 			<div class="menu-dek" style="margin-top: 0px;">
 				
-				<a href="login/login.php" style="text-decoration: none;  color: #FF4040; font-weight: 700">Вход</a>
+				<a href="login/login.php" style="text-decoration: none;  color: #1f1f1f; font-weight: 700; ">Вход</a>
 				<a href="login/signin.php"><button class="header-btn header-btn-sig" style="font-weight: 700">Регистрация</button></a>
 			</div>
 		</div>
@@ -28,9 +35,9 @@
 			<div class="container2"   >
 				<div class="hero-content2"  >
 					
-					<h1 class="hero-title">Улучши город вместе с нами!</h1>
+					<h1 class="hero-title">Помоги начинающим стартаперам</h1>
 					<p class="hero-descr" style="color:fff; font-size:24px">
-						Объединяйтесь с другими людьми, чтобы помочь своему городу!
+					Вкладывайся в будущее
 					</p>
 					<a href="login/signin.php" class="link hero-link">
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -101,6 +108,6 @@
 		
 	</main>
 </body>
-
+<?php }; ?>
 </script>
 </html>
