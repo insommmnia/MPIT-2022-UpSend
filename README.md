@@ -20,12 +20,6 @@
 после покупки подписки. 
 
 
-![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/c278d9253bf960cf1aa38c7feecac772e14ffd9d/imgs/1_1.png?raw=true)
-
-![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/10abe435598cf26a9e60eeb40a9133bd2e2c845b/imgs/prof.png?raw=true)
-![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/10abe435598cf26a9e60eeb40a9133bd2e2c845b/imgs/prof2.png?raw=true)
-
-
 #### Реализация
 Возможность отслеживания проделанной работы и отчета затраченных средств
 Распространение продуктов наших пользователей с целью максимальной заинтересованности потребителя
@@ -43,3 +37,9 @@
 Система платных подписок стартаперам, дающие различные привелегии(Ваш проект будет на главной странице сайта, первым среди предлагаемых и т.д.)
 За хост на сервере будет взиматься плата
 Небольшая комиссия с инвестиций
+
+
+![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/c278d9253bf960cf1aa38c7feecac772e14ffd9d/imgs/1_1.png?raw=true)
+
+![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/10abe435598cf26a9e60eeb40a9133bd2e2c845b/imgs/prof.png?raw=true)
+![site](https://github.com/insommmnia/MPIT-2022-UpSent/blob/10abe435598cf26a9e60eeb40a9133bd2e2c845b/imgs/prof2.png?raw=true)
