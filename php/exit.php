@@ -7,6 +7,6 @@ session_start();
 session_unset();
 // Наконец, разрушить сессию.
 session_destroy();
-header('Location: ../index.html');
+header('Location: ../index.php');
 
 ?>

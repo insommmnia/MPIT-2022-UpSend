@@ -66,41 +66,31 @@
             <?php if ($_SESSION['id'] != "") {
                                   
             $connect = mysqli_connect("j41406569.myjino.ru","j41406569","nikitka20041616","j41406569");
-        $text_query = "SELECT * FROM users WHERE id = '{$_SESSION['id']}'";
-        $text_query2 = "SELECT * FROM posts WHERE userid =  '{$_SESSION['id']}'";  
-         $text_query3 = "SELECT * FROM suggests WHERE userid =  '{$_SESSION['id']}'";
-         $text_query4 = "SELECT * FROM goals WHERE userid =  '{$_SESSION['id']}'";
+        $text_query = "SELECT * FROM users WHERE id = '{$_GET["userid"]}'";
+        $text_query2 = "SELECT * FROM posts WHERE userid =  '{$_GET["userid"]}'";  
+         $text_query4 = "SELECT * FROM goals WHERE userid =  '{$_GET["userid"]}'";
         $query = mysqli_query($connect, $text_query);
-        $con = mysqli_query($connect, $text_query2);  
+        
          $con2 = mysqli_query($connect, $text_query2); 
-         $con3 = mysqli_query($connect, $text_query3);  
          $con4 = mysqli_query($connect, $text_query4);  
             $user = $query->fetch_assoc();
-            $result = $con->fetch_assoc();
+            
             $userproj =  $con2->fetch_assoc(); 
-            $suggestproj =  $con3->fetch_assoc(); 
+           
             $goals = $con4->fetch_assoc();
             };
             ?>
                                    
 				<div class="menu-dek" style="margin-top: 0px;">
-				 <?php
-                            if  ($_SESSION['id'] = $user["id"]) {
-                            
-                ?>  
+				 
 				
 				
-				<a href="#" class="link-profile">Профиль</a>
+				<a href="profile.php" class="link-profile">Профиль</a>
 				
 				<a href="php/exit.php"><button class="header-btn header-btn-ex">Выйти</button></a>
-				<?php
-                      }else {
-                       
-                ?>
+				
                 	
-				<a href="#" class="link-profile">Профиль</a>
-				<a href="php/exit.php"><button class="header-btn header-btn-ex">Выйти</button></a>
-				<?php }; ?>
+			
 				</div>
 			</div>
 		</div>
@@ -157,7 +147,7 @@
                    
                ?>   
                <p class="profile-descr" style="margin-top: 40px;" >
-              Добавьте информацию о себе в настройках
+              Нету информации о пользователе
            
             </p>
                
@@ -199,36 +189,10 @@
              Теги: #музыка #игры
          
         </p>
-        <a href="login/updater.php" class="menu-link link"><p class="profile-name-set" style="margin-top: 10px;">
-                 Настройки профиля
-               
-              </p></a>
-              <a href="php/exit.php"><button class="header-btn ex-2" style="border: solid red; color: red;height: 54px;">Выйти</button></a>
+       
           </li> 
           </div>
-          <div class="settings-profile"  style="margin-top: 54px;">
-            <li class="profile-card">
-                
-             
-              <p class="profile-name" style="margin-top: 10px;">
-                Настройки
-              
-              </p>
-               <p class="profile-descr" style="margin-top: 40px; color: #FF4040" >
-                Подтверждение аккаунта
-           
-                </p>
-              <a href="login/updater.php" class="menu-link link"><p class="profile-descr" style="margin-top: 10px;">
-                 Настройки профиля
-               
-              </p></a>
-              <p class="profile-descr" style="margin-top: 10px;" >
-                Кошельки
-             
-            </p>
-            
           
-          </li> </div>
         </div>
         
       
@@ -285,7 +249,7 @@ border-radius:15px;">
                          $per = $userproj["collected"]/($userproj["target"]/100);
                          
                       ?>
-                              <div id="myBar" class="w3-container w3" style="height:24px;width:<?php echo $per; ?>%; background-color: 
+                              <div id="myBar" class="w3-container w3" style="height:13px;width:<?php echo $per; ?>%; background-color: 
                               <?php
                               
                               if ($per == 0){
@@ -379,7 +343,7 @@ border-radius:15px;">
                          $per = $goals["collected"]/($goals["target"]/100);
                          
                       ?>
-                              <div id="myBar" class="w3-container w3" style="height:12px;width:<?php echo $per; ?>%; background-color: 
+                              <div id="myBar" class="w3-container w3" style="height:13px;width:<?php echo $per; ?>%; background-color: 
                               <?php
                               
                               if ($per == 0){
@@ -410,77 +374,44 @@ border-radius:15px;">
             Теги: #музыка #игры
          
         </p>
+        <form method="POST" action='php/donate.php'>
+                      <input type="" value="" name='money'>
+                       <input type="" value="<?php echo $goals["id"]; ?>" name='postid'>
+                       <input type="" value="<?php echo $goals["userid"]; ?>" name='userid'>
+                    <input type="hidden" value="<?php echo $_GET["userid"];  ?>" name='useridd'>
+                <a type="submit" class="link service-link">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 494.148 494.148" style="enable-background:new 0 0 494.148 494.148;" xml:space="preserve">
+              <g>
+                <g>
+                     <path d="M405.284,201.188L130.804,13.28C118.128,4.596,105.356,0,94.74,0C74.216,0,61.52,16.472,61.52,44.044v406.124
+                     c0,27.54,12.68,43.98,33.156,43.98c10.632,0,23.2-4.6,35.904-13.308l274.608-187.904c17.66-12.104,27.44-28.392,27.44-45.884
+                     C432.632,229.572,422.964,213.288,405.284,201.188z"/>
+                </g>
+              </g>
+            </svg>
+            <button style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"><span type="submit">Пожертвовать</span></button>
+        </a>
+            
+          
+          
+          </form>
          
 
                  
-                  <form method="POST">
-                      <?php  
-            
-                if($_SESSION['id'] != $goals["userid"]){
-                    
-               
-            ?>
-                      
-            
-          <?php };  ?> 
-          
-          </form>
+                 
         </li>
-            <?php } else{
-                
             
-            
-            ?>
-            <h3 class="service-subtitle" style="font-size: 24px;padding-top: 50px ">
-            Цели
-          </h3>
-             <div style='background-color: white; -webkit-box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2);
-                -moz-box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2); 
-            box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2);padding-bottom: 50px; max-width: 100%; padding-left: 20px;padding-right: 10px; padding-top: 20px;  border-radius: 15px'>
-            <h4 class="service-title" style="color: #1f1f1f; margin-bottom: 35px;">
-	       	Пока нет целей
-        	</h4>
-        	<p class="service-place"> Добавьте цели, чтобы выложить ваш проект на доску</p>
-        	<p class="service-place">Это нужно для того, чтобы инвесторы видели то, куда уйдут собранные средства</p>
-        	<p class="service-place">Сумма сбора будет прибавляться к общей сумме</p>
-            <a href="login/addgoal.php"><button class="header-btn header-btn-ex" style="margin-top: 20px">Добавить цель</button></a>
-            </div>
-            <?php
-            };
-            ?>
     
   
     
-    <?php 
-    }else{
-            if ($suggestproj['userid'] != ''){
-                
-    ?>
-         <div style='background-color: white; -webkit-box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2);
-      -moz-box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2); 
-      box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2); height: ; max-width: 100%; padding-left: 20px;padding-right: 10px; padding-top: 20px;  border-radius: 15px'>
-    <div style="display: flex">
-    <h4 class="service-title" style="color: #1f1f1f; margin-bottom: 40px">
-		Ваш Проект  находится на рассмотрении
-	</h4>
-	
-	
-    </div>
-    </div>
     
     
     
-    <?php }else { ?>   
-    <div style='background-color: white; -webkit-box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2);
-      -moz-box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2); 
-      box-shadow: 1px 1px 4px 0px rgba(34, 60, 80, 0.2); height: 200px; max-width: 100%; padding-left: 20px;padding-right: 10px; padding-top: 20px;  border-radius: 15px'>
-    <h4 class="service-title" style="color: #1f1f1f;">
-		Пока ничего нет
-	</h4>
-    <a href="login/addproject.php"><button class="header-btn header-btn-ex">Начать проект</button></a>
-    </div>
+   
+    
     <?php
-    };
+ };
     };
     
     ?>
